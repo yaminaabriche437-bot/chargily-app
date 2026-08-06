@@ -80,9 +80,7 @@ app.post('/api/create-checkout', async (req, res) => {
         currency: 'dzd',
         description: 'Ebook - Pharmacovigilance en Algérie',
         success_url: `${SITE_URL}/merci.html`,
-        failure_url: `${SITE_URL}/echec.html`,
-        webhook_endpoint_url: `${SITE_URL}/api/webhook`,
-        customer_email: email,
+        failure_url: `${SITE_URL}/echec.html`
         metadata: { name, email, role },
       }),
     });

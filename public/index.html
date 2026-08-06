@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharmacovigilance en Algérie - Ebook</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a1929 0%, #1a3a52 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.navbar {
+  background: rgba(10, 25, 41, 0.95);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d4af37;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.5px;
+}
+
+.nav-btn {
+  background: #d4af37;
+  border: none;
+  color: #0a1929;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1929 0%, #1a3a52 100%);
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #d4af37;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #e8e8e8;
+  line-height: 1.8;
+}
+
+.hero-visual {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-cover {
+  font-size: 100px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.book-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.book-subtitle {
+  font-size: 0.9rem;
+  color: #b8860b;
+  margin-bottom: 2rem;
+}
+
+.price-badge {
+  background: #d4af37;
+  color: #0a1929;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.price-value {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-note {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.urgency-banner {
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.urgency-icon {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.benefits {
+  background: white;
+  padding: 5rem 2rem;
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #0a1929;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #d4af37;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #0a1929;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.personas {
+  background: linear-gradient(135deg, #0a1929 0%, #1a3a52 100%);
+  padding: 5rem 2rem;
+  color: white;
+}
+
+.personas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.personas-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #d4af37;
+}
+
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.persona-card {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid #d4af37;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.persona-card:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: translateY(-5px);
+}
+
+.persona-title {
+  font-size: 1.4rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.persona-list {
+  list-style: none;
+}
+
+.persona-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.persona-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #d4af37;
+  color: #0a1929;
+  flex: 1;
+  min-width: 200px;
+}
+
+.btn-primary:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+}
+
+.btn-secondary:hover {
+  background: #d4af37;
+  color: #0a1929;
+}
+
+.form-section {
+  background: white;
+  padding: 5rem 2rem;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf1 100%);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0a1929;
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-price-display {
+  background: #d4af37;
+  color: #0a1929;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #0a1929;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: #d4af37;
+  color: #0a1929;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.form-submit:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+}
+
+.form-submit:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message {
+  text-align: center;
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+  padding: 1rem;
+  background: #f0f9f6;
+  border-radius: 4px;
+}
+
+.error-message {
+  text-align: center;
+  color: #e74c3c;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+  padding: 1rem;
+  background: #fadbd8;
+  border-radius: 4px;
+}
+
+.loading {
+  text-align: center;
+  color: #0a1929;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+}
+
+.footer {
+  background: #0a1929;
+  color: #d4af37;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #d4af37;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .cta-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    padding: 2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Pharmacovigilance DZ</div>
+  <button class="nav-btn" onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth'})">Accès à 3,900 DA</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Maîtrisez vos obligations de pharmacovigilance</h1>
+      <p>Initiation à la pharmacovigilance en Algérie basée sur les textes réglementaires officiels. 43 pages pour maîtriser votre cadre légal et vos obligations.</p>
+      <p style="color: #d4af37; font-weight: 600;">✓ Fondamentaux PV & cadre réglementaire Algérie</p>
+      <p style="color: #d4af37; font-weight: 600;">✓ Obligations clés du QPPV et DT</p>
+      <p style="color: #d4af37; font-weight: 600;">✓ VigiFlow & plateforme e-Reporting</p>
+      <p style="color: #d4af37; font-weight: 600;">✓ Checklists & calendrier des délais</p>
+      <div class="cta-group">
+        <button class="btn btn-primary" onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth'})">Accéder maintenant → 3,900 DA</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="book-cover">📚</div>
+      <div class="book-title">Pharmacovigilance en Algérie</div>
+      <div class="book-subtitle">Le guide complet du QPPV & DT</div>
+      
+      <div class="price-badge">
+        <div class="price-label">📢 Offre de lancement</div>
+        <div class="price-value">3,900 DA</div>
+        <div class="price-note">Prix revient à 5,900 DA après 50 ventes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="benefits-container">
+    <h2 class="section-title">Pourquoi cet ebook ?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">⚖️</div>
+        <h3>Conformité garantie</h3>
+        <p>Comprendre toutes vos obligations légales sans risque réglementaire. Tout ce que vous devez savoir en un seul lieu.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⏱️</div>
+        <h3>Gagnez du temps</h3>
+        <p>50 pages au lieu de décortiquer 200. Pas d'attente de formations externes coûteuses.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📖</div>
+        <h3>Basé sur les textes officiels</h3>
+        <p>Fondé sur le Guide des Bonnes Pratiques de Pharmacovigilance et l'Arrêté Interministériel du 10 septembre 2025.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌍</div>
+        <h3>Algérie-centré</h3>
+        <p>Pas de guide générique. Adapté aux réalités et exigences du marché pharmaceutique algérien.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📋</div>
+        <h3>Outils pratiques</h3>
+        <p>Checklists et calendrier des délais réglementaires - tout ce qu'il faut pour bien organiser votre PV.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔄</div>
+        <h3>Mise à jour continue</h3>
+        <p>Vous recevrez les mises à jour futures de l'ebook sans frais supplémentaires.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="personas">
+  <div class="personas-container">
+    <h2 class="personas-title">Pour qui est cet ebook ?</h2>
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-title">Pour les professionnels en pharmacovigilance</div>
+        <ul class="persona-list">
+          <li>Renforcer vos connaissances du cadre algérien</li>
+          <li>Maîtriser vos obligations réglementaires</li>
+          <li>Vous préparer aux inspections</li>
+          <li>Optimiser votre système de reporting</li>
+          <li>Accélérer votre montée en compétences</li>
+        </ul>
+      </div>
+      <div class="persona-card">
+        <div class="persona-title">Pour ceux qui veulent rejoindre le secteur</div>
+        <ul class="persona-list">
+          <li>Comprendre les fondamentaux de la PV</li>
+          <li>Connaître le cadre légal algérien</li>
+          <li>Vous positionner pour un poste en industrie</li>
+          <li>Acquérir les compétences attendues</li>
+          <li>Débuter sans formation externe coûteuse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="form-section">
+  <div class="form-container">
+    <div class="urgency-banner">
+      <span class="urgency-icon">⚡</span>
+      Offre limitée aux 100 premiers à 3,900 DA
+    </div>
+    
+    <h3 class="form-title">Accédez à l'ebook maintenant</h3>
+    <p class="form-subtitle">Paiement par El Dahabia • Accès immédiat par email</p>
+    
+    <div class="form-price-display">
+      💰 3,900 DA seulement
+    </div>
+
+    <form id="paymentForm" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Prénom & Nom</label>
+        <input type="text" id="name" name="name" placeholder="Ex: Fatima Zara" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" name="email" placeholder="vous@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="role">Vous êtes...</label>
+        <select id="role" name="role" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="qppv">QPPV</option>
+          <option value="dt">Détenteur d'Autorisation</option>
+          <option value="pharmacist">Pharmacien</option>
+          <option value="other">Autre professionnel pharma</option>
+        </select>
+      </div>
+      <div class="loading" id="loading">⏳ Traitement en cours...</div>
+      <button type="submit" class="form-submit" id="submitBtn">Payer 3,900 DA et accéder à l'ebook</button>
+      <div class="success-message" id="success">✓ Merci ! Vérifiez votre email pour accéder à l'ebook!</div>
+      <div class="error-message" id="error"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p style="font-size: 0.95rem; margin-bottom: 1rem;"><strong>Ce qu'est cet ebook :</strong> Une initiation à la pharmacovigilance en Algérie, destinée aux professionnels de santé qui travaillent dans ce domaine ou qui souhaitent y accéder.</p>
+  <p style="font-size: 0.9rem; margin-bottom: 0.8rem;">Paiement sécurisé via <strong>El Dahabia</strong> | Accès immédiat par email</p>
+  <p style="font-size: 0.85rem;">&copy; 2025 Pharmacovigilance DZ.</p>
+  <p style="font-size: 0.85rem; margin-top: 0.5rem;">Tous les droits réservés | Politique de confidentialité</p>
+</footer>
+
+<script>
+// Aucune clé secrète ici : le frontend ne fait qu'appeler notre propre backend,
+// qui lui seul contacte l'API Chargily avec la clé secrète protégée côté serveur.
+
+async function handleSubmit(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const role = document.getElementById('role').value;
+
+  if (!name || !email || !role) {
+    showError('Tous les champs sont obligatoires');
+    return;
+  }
+
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('error').style.display = 'none';
+  document.getElementById('success').style.display = 'none';
+
+  try {
+    // On demande à notre backend de créer le paiement Chargily.
+    // L'ebook ne sera envoyé par email qu'APRÈS confirmation réelle du paiement
+    // (via le webhook Chargily côté serveur) — pas avant, contrairement à l'ancienne version.
+    const response = await fetch('/api/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, role }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.checkout_url) {
+      throw new Error(data.error || 'Impossible de créer le paiement');
+    }
+
+    document.getElementById('success').style.display = 'block';
+    document.getElementById('loading').style.display = 'none';
+
+    // Redirection vers la page de paiement Chargily
+    setTimeout(() => {
+      window.location.href = data.checkout_url;
+    }, 800);
+
+  } catch (error) {
+    console.error('Erreur lors de la création du paiement:', error);
+    showError('Une erreur s\'est produite. Veuillez réessayer.');
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
+  }
+}
+
+function showError(message) {
+  const errorDiv = document.getElementById('error');
+  errorDiv.textContent = '❌ ' + message;
+  errorDiv.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
